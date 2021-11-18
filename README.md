@@ -2,7 +2,7 @@
 
 ## How to create the project
 
-ng new "project name"
+`ng new "project name"`
 
 ## How to run the project
 
