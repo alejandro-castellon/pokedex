@@ -86,8 +86,3 @@ export const dataPokemons = {
     ]
   };
   
-  export function getPokemonImageUri (id: number) {
-    const imageId = ('00' + id).slice(-3); // para 1 => 001
-    return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${imageId}.png`;
-  }
-  
