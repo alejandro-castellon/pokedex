@@ -3,7 +3,7 @@
         <span>Search: </span>
         <input type="text"
             [(ngModel)]="search"
-            (ngModelChange)=searchPokemons()>
+            (ngModelChange)="searchPokemons()">
     </div>
 
     <button *ngIf="pokemons.length" (click)="nextPokemons()">

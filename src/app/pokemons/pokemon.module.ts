@@ -20,9 +20,9 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
     HttpClientModule
   ],
   exports: [
-      PokemonListComponent,
-      PokemonDetailComponent,
-      PokemonRoutingModule
+    PokemonListComponent,
+    PokemonDetailComponent,
+    PokemonRoutingModule
   ],
   providers: [],
   bootstrap: []

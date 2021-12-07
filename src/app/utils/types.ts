@@ -11,7 +11,7 @@ export type PokemonDetail = {
     height: number
     weight: number
     held_items: any[]
-    id: string
+    id: number
     is_default: boolean
     location_area_encounters: string
     moves: any[]

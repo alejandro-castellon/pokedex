@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {RouterModule} from "@angular/router";
+import {Routes, RouterModule} from "@angular/router";
 import { PokemonListComponent } from "./pokemon-list.component";
 import { PokemonDetailComponent } from "./profile/pokemon-detail.component";
 

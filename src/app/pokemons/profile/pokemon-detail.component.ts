@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import {Location} from "@angular/common";
+import { Location } from "@angular/common";
 import { PokemonDetail } from "src/app/utils/types";
 import { PokemonService } from "../pokemon.service";
-import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import { Subscription } from "rxjs";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'pokemon-detail',

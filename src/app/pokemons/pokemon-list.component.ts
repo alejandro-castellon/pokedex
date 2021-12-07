@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { pokemonColorMap } from "./pokemonColorHash"; 
 import { Pokemon } from "../utils/types";
 import { PokemonService } from "./pokemon.service";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'pokemon-list',
@@ -39,7 +40,7 @@ export class PokemonListComponent implements OnInit{
 
     goToPokemonDetails(pokemon: Pokemon){
         const id = this.getPokemonIdFromUrl(pokemon.url);
-        this.router.navigate([`/pokedex/${id}`])
+        this.router.navigate([`/pokedex/${id}`]);
     }
 
     getImageUri(pokemon: Pokemon){
