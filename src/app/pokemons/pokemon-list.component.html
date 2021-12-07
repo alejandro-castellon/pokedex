@@ -5,21 +5,19 @@
             [(ngModel)]="search"
             (ngModelChange)=searchPokemons()>
     </div>
+
     <button *ngIf="pokemons.length" (click)="nextPokemons()">
         Next
     </button>
-    <div>
-        <div class="pokemons">
-            <div class="item-pokemon" 
-                [ngStyle]= "{'background-color': getPokemonColor(pokemon)}"
-                *ngFor="let pokemon of pokemons">
-                <img [src]="getImageUri(pokemon)" [alt]="pokemon.name"/>
-                <p [ngStyle]="{'color': getTextColor(pokemon)}">{{pokemon.name | titlecase}}</p>
-            </div>
-        </div>
-        
-        <not-found *ngIf="!pokemons.length"></not-found>
 
-        
-    </div>>
+    <div class="pokemons">
+        <div class="item-pokemon" 
+            [ngStyle]= "{'background-color': getPokemonColor(pokemon)}"
+            *ngFor="let pokemon of pokemons"
+            (click)="goToPokemonDetails(pokemon)">
+            <img [src]="getImageUri(pokemon)" [alt]="pokemon.name"/>
+            <p [ngStyle]="{'color': getTextColor(pokemon)}">{{pokemon.name | titlecase}}</p>
+        </div>
+    </div>
+    <not-found *ngIf="!pokemons.length"></not-found>
 </div>

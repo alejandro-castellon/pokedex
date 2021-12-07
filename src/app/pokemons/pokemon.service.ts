@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import {HttpClient} from '@angular/common/http'
-import { dataPokemons } from "./mockdata";
-import { Pokemon } from "../utils/types";
+import { Pokemon, PokemonDetail } from "../utils/types";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -19,6 +18,10 @@ export class PokemonService{
     //         })
     //     });
     // }
+
+    getPokemon(id: string){
+        return this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}`)as Observable<PokemonDetail>;
+    }
 
     getPokemonList(offset: number,  limit: number) : Observable<{results: Pokemon[]}>{
         return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`) as Observable<{results: Pokemon[]}>

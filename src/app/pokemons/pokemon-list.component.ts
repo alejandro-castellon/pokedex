@@ -16,7 +16,7 @@ export class PokemonListComponent implements OnInit{
     offset: number = 0;
     limit: number = 24;
 
-    constructor(private pokemonService: PokemonService) {}
+    constructor(private pokemonService: PokemonService, private router: Router) {}
 
     ngOnInit(): void {
         this.getPokemons();
@@ -36,6 +36,11 @@ export class PokemonListComponent implements OnInit{
     //     this.pokemonService.getPokemonList(this.offset, this.limit)
     //         .then(data => this.pokemons = data);
     // }
+
+    goToPokemonDetails(pokemon: Pokemon){
+        const id = this.getPokemonIdFromUrl(pokemon.url);
+        this.router.navigate([`/pokedex/${id}`])
+    }
 
     getImageUri(pokemon: Pokemon){
         return this.pokemonService.getPokemonImageUri(this.getPokemonIdFromUrl(pokemon.url))

@@ -1,1 +1,10 @@
-<p>Pokemon detail</p>
+<div class="pokemon-container">
+    <img [src]="getImageUri()" alt="pokemon">
+    <div>
+        <p>Name: {{pokemonDetail?.name}}</p>
+        <p>Height: {{pokemonDetail?.height}}</p>
+        <p>Weight: {{pokemonDetail?.weight}}</p>
+    </div>
+</div>>
+
+<button (click)="goBack()">Go Back</button>
