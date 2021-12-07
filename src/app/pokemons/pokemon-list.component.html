@@ -5,6 +5,9 @@
             [(ngModel)]="search"
             (ngModelChange)=searchPokemons()>
     </div>
+    <button *ngIf="pokemons.length" (click)="nextPokemons()">
+        Next
+    </button>
     <div>
         <div class="pokemons">
             <div class="item-pokemon" 
@@ -15,9 +18,8 @@
             </div>
         </div>
         
-        <div class="not-found" *ngIf="!pokemons.length">
-            <h2>No Pokemons to display</h2>
-            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2d570b07-493a-41dc-8536-4bd2afc13b4f/dabbi1q-f0958683-d6e4-47fa-ac20-aa418b563e66.png/v1/fill/w_774,h_1033,strp/pikachu_sad__by_kithu_blaze_dabbi1q-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM2NiIsInBhdGgiOiJcL2ZcLzJkNTcwYjA3LTQ5M2EtNDFkYy04NTM2LTRiZDJhZmMxM2I0ZlwvZGFiYmkxcS1mMDk1ODY4My1kNmU0LTQ3ZmEtYWMyMC1hYTQxOGI1NjNlNjYucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.YQlSJbxlK-J1B7IfTa2dSevTj2y4-og7cOCbEH_rSlc">
-        </div>
+        <not-found *ngIf="!pokemons.length"></not-found>
+
+        
     </div>>
 </div>

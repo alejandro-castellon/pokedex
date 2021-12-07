@@ -3,17 +3,24 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { PokemonListComponent } from './pokemon-list.component';
+import { NotFoundComponent } from '../common/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonDetailComponent } from './profile/pokemon-detail.component';
 
 @NgModule({
   declarations: [
-    PokemonListComponent
+    PokemonListComponent,
+    NotFoundComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
-      PokemonListComponent
+      PokemonListComponent,
+      PokemonDetailComponent
   ],
   providers: [],
   bootstrap: []

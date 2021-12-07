@@ -13,13 +13,29 @@ export class PokemonListComponent implements OnInit{
     pokemons: Pokemon[] = [];
     private pokemonList: Pokemon[] = [];
     search: string = '';
+    offset: number = 0;
+    limit: number = 24;
+
     constructor(private pokemonService: PokemonService) {}
 
-    ngOnInit(): void{
-        this.pokemonList = this.pokemonService.getPokemonList();
-        this.pokemons = this.pokemonList;
+    ngOnInit(): void {
+        this.getPokemons();
+        this.pokemonList = this.pokemons;
     }
+    
+    getPokemons() {
+        this.pokemonService.getPokemonList(this.offset, this.limit)
+            .subscribe((data: {results: Pokemon[]}) => this.pokemons = data.results);
+    }
+    
+    // async getPokemons() : Promise<void> {
+    //     this.pokemons = await this.pokemonService.getPokemonList(this.offset, this.limit)
+    // }
 
+    // getPokemons() : void {
+    //     this.pokemonService.getPokemonList(this.offset, this.limit)
+    //         .then(data => this.pokemons = data);
+    // }
 
     getImageUri(pokemon: Pokemon){
         return this.pokemonService.getPokemonImageUri(this.getPokemonIdFromUrl(pokemon.url))
@@ -46,6 +62,12 @@ export class PokemonListComponent implements OnInit{
             default:
                 return 'white';
         }
+    }
+
+    nextPokemons(): void {
+        this.offset += this.limit;
+
+        this.getPokemons();
     }
 
     searchPokemons(){
